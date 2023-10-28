@@ -24,7 +24,7 @@ class AcceptReceiver: BroadcastReceiver() {
                 goToMapTrip(context)
             }
             else {
-                Log.d("RECEIVER", "NO SE PUDO ACTUALIZAR EL ESTADO DEL VIAJE")
+                Log.d("RECEIVER", "O STATUS DA VIAGEM NÃO PODE SER ATUALIZADO")
             }
         }
     }

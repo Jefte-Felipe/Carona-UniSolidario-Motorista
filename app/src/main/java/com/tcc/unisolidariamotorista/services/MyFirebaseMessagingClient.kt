@@ -62,7 +62,7 @@ class MyFirebaseMessagingClient: FirebaseMessagingService() {
 
         val actionAccept = NotificationCompat.Action.Builder(
             R.mipmap.ic_launcher,
-            "Aceptar",
+            "Aceitar",
             acceptPendingIntent
         ).build()
 

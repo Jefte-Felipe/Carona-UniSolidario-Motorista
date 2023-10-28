@@ -409,14 +409,14 @@ class MapTripActivity : AppCompatActivity(), OnMapReadyCallback, Listener, Direc
                         markerOrigin?.remove()
                         addDestinationMarker()
                         startTimer()
-                        sendNotification("Jornada iniciada")
+                        sendNotification("Corrida iniciada")
                     }
                     showButtonFinish()
                 }
             }
         }
         else {
-            Toast.makeText(this, "Você deve estar mais perto da posição de coleta", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Você deve estar mais perto da posição de partida", Toast.LENGTH_LONG).show()
         }
     }
 
@@ -450,9 +450,9 @@ class MapTripActivity : AppCompatActivity(), OnMapReadyCallback, Listener, Direc
         historyProvider.create(history).addOnCompleteListener {
             if (it.isSuccessful) {
 
-                bookingProvider.updateStatus(booking?.idClient!!, "finished").addOnCompleteListener {
+                bookingProvider.updateStatus(booking?.idClient!!, "Finalizada").addOnCompleteListener {
                     if (it.isSuccessful) {
-                        sendNotification("Viagem concluída")
+                        sendNotification("Corrida concluída")
                         goToCalificationClient()
                     }
                 }

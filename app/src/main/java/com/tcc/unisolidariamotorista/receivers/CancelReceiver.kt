@@ -20,10 +20,10 @@ class CancelReceiver: BroadcastReceiver() {
         bookingProvider.updateStatus(idBooking, "cancel").addOnCompleteListener {
 
             if (it.isSuccessful) {
-                Log.d("RECEIVER", "EL VIAJE FUE CANCELADO")
+                Log.d("RECEIVER", "A VIAGEM FOI CANCELADAO")
             }
             else {
-                Log.d("RECEIVER", "NO SE PUDO ACTUALIZAR EL ESTADO DEL VIAJE")
+                Log.d("RECEIVER", "O STATUS DA VIAGEM NÃO PODE SER ATUALIZADO")
             }
         }
     }
