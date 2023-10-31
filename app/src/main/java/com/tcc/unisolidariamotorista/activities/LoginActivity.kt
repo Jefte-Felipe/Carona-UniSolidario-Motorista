@@ -8,12 +8,14 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.tcc.unisolidariamotorista.databinding.ActivityLoginBinding
 import com.tcc.unisolidariamotorista.providers.AuthProvider
+import com.tcc.unisolidariamotorista.utils.CircleAnimationUtil
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
     val authProvider = AuthProvider()
 
+    private var circleAnimationUtil: CircleAnimationUtil? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +27,13 @@ class LoginActivity : AppCompatActivity() {
 
         binding.btnRegister.setOnClickListener { goToRegister() }
         binding.btnLogin.setOnClickListener { login() }
+        startCirclesAnimation()
+    }
+
+    private fun startCirclesAnimation() {
+        val circles = listOf(binding.imgCircleEnd, binding.imgCircleBottom)
+        circleAnimationUtil = CircleAnimationUtil(circles)
+        circleAnimationUtil?.start()
     }
 
     private fun login() {
@@ -77,4 +86,8 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    override fun onDestroy() {
+        circleAnimationUtil?.cancel()
+        super.onDestroy()
+    }
 }
