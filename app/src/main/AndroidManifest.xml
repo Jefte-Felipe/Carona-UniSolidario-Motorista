@@ -43,6 +43,11 @@
         <activity
             android:name=".activities.CalificationClientActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".activities.QuestionAnswerActivity"
+            android:exported="false" />
+
         <activity
             android:name=".activities.MapTripActivity"
             android:exported="false" />
