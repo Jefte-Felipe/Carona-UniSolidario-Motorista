@@ -43,14 +43,6 @@
       },
       "oauth_client": [
         {
-          "client_id": "537721565294-39lpopgu3i3e19k1jef8qqu97jcen2es.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.tcc.unisolidariamotorista",
-            "certificate_hash": "642d43ae2f01e7b63e8819242852e96bc1c13782"
-          }
-        },
-        {
           "client_id": "537721565294-ek54b3ovi0ob0bllh1g0onf9i1hrk52u.apps.googleusercontent.com",
           "client_type": 3
         }
