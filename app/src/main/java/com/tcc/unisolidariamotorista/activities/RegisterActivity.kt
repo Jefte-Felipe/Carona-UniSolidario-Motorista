@@ -29,10 +29,19 @@ class RegisterActivity : AppCompatActivity() {
 
         binding.btnRegister.setOnClickListener { register() }
         startCirclesAnimation()
+
+        binding.questData.setOnClickListener {
+            lgpdData()
+        }
+    }
+
+    private fun lgpdData() {
+        val i = Intent(this, QuestionAnswerActivity::class.java)
+        startActivity(i)
     }
 
     private fun startCirclesAnimation() {
-        val circles = listOf(binding.imgCircleEnd, binding.imgCircleBottom)
+        val circles = listOf(binding.imgCircleEnd)
         circleAnimationUtil = CircleAnimationUtil(circles)
         circleAnimationUtil?.start()
     }
