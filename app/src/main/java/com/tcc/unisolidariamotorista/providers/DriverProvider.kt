@@ -58,14 +58,15 @@ class DriverProvider {
 
     fun update(driver: Driver): Task<Void> {
         val map: MutableMap<String, Any> = HashMap()
-        map["name"] = driver?.name!!
-        map["lastname"] = driver?.lastname!!
-        map["phone"] = driver?.phone!!
-        map["brandCar"] = driver?.brandCar!!
-        map["colorCar"] = driver?.colorCar!!
-        map["plateNumber"] = driver?.plateNumber!!
-        map["image"] = driver?.image!!
-        return db.document(driver?.id!!).update(map)
+        driver.name?.let { map ["name"] = it}
+        driver.lastname?.let { map ["lastname"] = it}
+        driver.phone?.let { map ["phone"] = it}
+        driver.brandCar?.let { map ["brandCar"] = it}
+        driver.colorCar?.let { map ["colorCar"] = it}
+        driver.plateNumber?.let { map ["plateNumber"] = it}
+        driver.image?.let { map ["image"] = it}
+
+        return db.document(driver.id!!).update(map)
     }
 
 
