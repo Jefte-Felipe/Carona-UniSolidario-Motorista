@@ -48,7 +48,7 @@ class MyFirebaseMessagingClient: FirebaseMessagingService() {
     private fun showNotificationActions(title: String, body: String, idBooking: String) {
         val helper = NotificationHelper(baseContext)
 
-        // ACEPTAR VIAJE
+        // ACEITAR CORRIDA
         val acceptIntent = Intent(this, AcceptReceiver::class.java)
         acceptIntent.putExtra("idBooking", idBooking)
         var acceptPendingIntent: PendingIntent? = null
@@ -66,7 +66,7 @@ class MyFirebaseMessagingClient: FirebaseMessagingService() {
             acceptPendingIntent
         ).build()
 
-        // CANCELAR VIAJE
+        // CANCELAR CORRIDA
         val cancelIntent = Intent(this, CancelReceiver::class.java)
         cancelIntent.putExtra("idBooking", idBooking)
         var cancelPendingIntent: PendingIntent? = null
