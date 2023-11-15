@@ -251,7 +251,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Avaliação do cliente"
+                    android:text="Avaliação do aluno"
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="17sp"/>
