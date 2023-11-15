@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginTop="72dp"
-        android:text="Olá,\nIniciar Sessão"
+        android:text="Olá,\nIniciar Sessão\ncomo motorista"
         android:textColor="@color/green"
         android:textSize="30sp"
         android:textStyle="bold"

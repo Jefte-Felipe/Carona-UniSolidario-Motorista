@@ -519,7 +519,8 @@ class MapTripActivity : AppCompatActivity(), OnMapReadyCallback, Listener, Direc
 
         if (booking != null && originLatLng != null) {
             var distance = getDistanceBetween(myLocationLatLng!!, originLatLng!!)
-            if (distance <= 300) {
+            // Distancia definida em 7km
+            if (distance <= 7000) {
                 isCloseToOrigin = true
             }
             Log.d("LOCATION", "Distance: ${distance}")
