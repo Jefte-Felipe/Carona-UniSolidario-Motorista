@@ -450,7 +450,7 @@ class MapTripActivity : AppCompatActivity(), OnMapReadyCallback, Listener, Direc
         historyProvider.create(history).addOnCompleteListener {
             if (it.isSuccessful) {
 
-                bookingProvider.updateStatus(booking?.idClient!!, "Finalizada").addOnCompleteListener {
+                bookingProvider.updateStatus(booking?.idClient!!, "finished").addOnCompleteListener {
                     if (it.isSuccessful) {
                         sendNotification("Corrida concluída")
                         goToCalificationClient()
