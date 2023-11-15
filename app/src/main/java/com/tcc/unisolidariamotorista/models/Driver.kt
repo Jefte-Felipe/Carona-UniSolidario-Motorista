@@ -1,6 +1,6 @@
 package com.tcc.unisolidariamotorista.models
 
-import com.beust.klaxon.*
+import com.beust.klaxon.Klaxon
 
 private val klaxon = Klaxon()
 
