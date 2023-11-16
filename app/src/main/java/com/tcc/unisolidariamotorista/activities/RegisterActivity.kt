@@ -54,7 +54,8 @@ class RegisterActivity : AppCompatActivity() {
         val password = binding.textFieldPassword.text.toString()
         val confirmPassword = binding.textFieldConfirmPassword.text.toString()
 
-        if (isValidForm(name, lastname, email, phone, password, confirmPassword)) {
+        val (isValid, _) = isValidForm(name, lastname, email, password, confirmPassword)
+        if (isValid) {
             authProvider.register(email, password).addOnCompleteListener {
                 if (it.isSuccessful) {
                     val driver = Driver(
@@ -94,46 +95,58 @@ class RegisterActivity : AppCompatActivity() {
         name: String,
         lastname: String,
         email: String,
-        phone: String,
         password: String,
         confirmPassword: String
-    ): Boolean {
+    ): Pair<Boolean, String> {
+
+        val phone = binding.textFieldPhone.text.toString()
+        val isPhoneValid = binding.textFieldPhone.isDone
 
         if (name.isEmpty()) {
             Toast.makeText(this, "Você deve inserir seu nome", Toast.LENGTH_SHORT).show()
-            return false
+            return Pair(false, "")
         }
+
         if (lastname.isEmpty()) {
             Toast.makeText(this, "Você deve inserir seu sobrenome", Toast.LENGTH_SHORT).show()
-            return false
+            return Pair(false, "")
         }
+
         if (email.isEmpty()) {
             Toast.makeText(this, "Você deve inserir seu e-mail", Toast.LENGTH_SHORT).show()
-            return false
+            return Pair(false, "")
         }
-        if (phone.isEmpty()) {
-            Toast.makeText(this, "Você deve inserir seu telefone", Toast.LENGTH_SHORT).show()
-            return false
+
+        if (!isPhoneValid) {
+            Toast.makeText(this, "Telefone inválido", Toast.LENGTH_SHORT).show()
+            return Pair(false, "")
         }
+
+        val unmaskedPhone = binding.textFieldPhone.unMasked
+
         if (password.isEmpty()) {
             Toast.makeText(this, "Você deve inserir a senha", Toast.LENGTH_SHORT).show()
-            return false
+            return Pair(false, "")
         }
+
         if (confirmPassword.isEmpty()) {
-            Toast.makeText(this, "Você deve inserir a confirmação da senha", Toast.LENGTH_SHORT).show()
-            return false
+            Toast.makeText(this, "Você deve inserir a confirmação da senha", Toast.LENGTH_SHORT)
+                .show()
+            return Pair(false, "")
         }
+
         if (password != confirmPassword) {
             Toast.makeText(this, "As senhas devem corresponder", Toast.LENGTH_SHORT).show()
-            return false
+            return Pair(false, "")
         }
+
         if (password.length < 6) {
-            Toast.makeText(this, "A senha deve ter pelo menos 6 caracteres", Toast.LENGTH_LONG).show()
-            return false
+            Toast.makeText(this, "A senha deve ter pelo menos 6 caracteres", Toast.LENGTH_LONG)
+                .show()
+            return Pair(false, "")
         }
 
-        return true
-
+        return Pair(true, unmaskedPhone)
     }
 
     private fun goToLogin() {
