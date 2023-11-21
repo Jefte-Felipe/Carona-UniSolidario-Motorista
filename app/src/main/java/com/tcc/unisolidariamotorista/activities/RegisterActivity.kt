@@ -67,17 +67,17 @@ class RegisterActivity : AppCompatActivity() {
                     )
                     driverProvider.create(driver).addOnCompleteListener {
                         if (it.isSuccessful) {
-                            Toast.makeText(this@RegisterActivity, "Registro bem-sucedido", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@RegisterActivity, "Cadastro realizado com sucesso", Toast.LENGTH_SHORT).show()
                             goToMap()
                         }
                         else {
-                            Toast.makeText(this@RegisterActivity, "Ocorreu um erro Os dados do usuário foram armazenados ${it.exception.toString()}", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@RegisterActivity, "Ops, ocorreu uma falha ao salvar dados ${it.exception.toString()}", Toast.LENGTH_SHORT).show()
                             Log.d("FIREBASE", "Error: ${it.exception.toString()}")
                         }
                     }
                 }
                 else {
-                    Toast.makeText(this@RegisterActivity, "Registro fallido ${it.exception.toString()}", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@RegisterActivity, "Ops, ocorreu uma falha ao salvar dados ${it.exception.toString()}", Toast.LENGTH_LONG).show()
                     Log.d("FIREBASE", "Error: ${it.exception.toString()}")
                 }
             }
