@@ -107,6 +107,7 @@
                 app:mask="(__) _____-____"
                 android:background="@drawable/edittext_background"
                 app:maskCharacter="_"
+                android:hint="(##) #####-####"
                 android:textColor="#707070"
                 android:textSize="18sp"
                 android:paddingStart="10dp"
