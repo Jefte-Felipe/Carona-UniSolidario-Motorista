@@ -409,7 +409,7 @@ class MapTripActivity : AppCompatActivity(), OnMapReadyCallback, Listener, Direc
                         markerOrigin?.remove()
                         addDestinationMarker()
                         startTimer()
-                        sendNotification("Corrida iniciada")
+                        sendNotification("started")
                     }
                     showButtonFinish()
                 }
@@ -452,7 +452,7 @@ class MapTripActivity : AppCompatActivity(), OnMapReadyCallback, Listener, Direc
 
                 bookingProvider.updateStatus(booking?.idClient!!, "finished").addOnCompleteListener {
                     if (it.isSuccessful) {
-                        sendNotification("Corrida concluída")
+                        sendNotification("finished")
                         goToCalificationClient()
                     }
                 }
