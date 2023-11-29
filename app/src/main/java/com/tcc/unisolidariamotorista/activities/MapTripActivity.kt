@@ -250,7 +250,7 @@ class MapTripActivity : AppCompatActivity(), OnMapReadyCallback, Listener, Direc
     }
 
     private fun startTimer() {
-        handler.postDelayed(runnable, 1000) // INICIALIZAR EL CONTADOR
+        handler.postDelayed(runnable, 1000) // Iniciar o contador
     }
 
     private fun getDistanceBetween(originLatLng: LatLng, destinationLatLng: LatLng): Float {
