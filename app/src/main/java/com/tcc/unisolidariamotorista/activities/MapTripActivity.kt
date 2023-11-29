@@ -416,7 +416,7 @@ class MapTripActivity : AppCompatActivity(), OnMapReadyCallback, Listener, Direc
             }
         }
         else {
-            Toast.makeText(this, "Você deve estar mais perto da posição de partida", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Você deve estar mais perto do local de partida", Toast.LENGTH_LONG).show()
         }
     }
 
