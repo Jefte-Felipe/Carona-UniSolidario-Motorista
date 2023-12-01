@@ -226,7 +226,7 @@ class MapTripActivity : AppCompatActivity(), OnMapReadyCallback, Listener, Direc
 
                 }
                 else {
-                    Toast.makeText(this@MapTripActivity, "Ocorreu um erro ao enviar a notificação", Toast.LENGTH_LONG).show()
+//                    Toast.makeText(this@MapTripActivity, "Ocorreu um erro ao enviar a notificação", Toast.LENGTH_LONG).show()
                 }
             }
 
